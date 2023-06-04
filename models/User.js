@@ -26,12 +26,10 @@ function createUserModel(Sequelize, DataTypes) {
     },
     createdAt: {
       allowNull: false,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       type: DataTypes.DATE,
     },
     updatedAt: {
       allowNull: false,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       type: DataTypes.DATE,
     },
   },{

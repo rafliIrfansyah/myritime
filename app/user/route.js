@@ -6,7 +6,6 @@ const router = express.Router();
 //API Get User/s Data
 router.get('/', handlerGetUsers);
 router.get('/:id', authenticationToken, handlerGetUserById);
-router.get('/me', authenticationToken, handlerGetUserLoggedIn);
 
 // API Register
 router.post('/register', handlerRegisterUser);

@@ -40,31 +40,6 @@ module.exports = {
             next(error);
         }
     },
-    handlerGetUserLoggedIn: async (req, res, next) => {
-        try {
-            const id = req.user.id;
-            const user = await User.findOne({
-                where: {
-                    id: id,
-                },
-            });
-    
-            if (!user) {
-                return res.status(400).json({
-                    status: 'error',
-                    message: 'User not found',
-                });
-            }   
-    
-            res.status(200).json({
-                status: "success",
-                message: "Get user logged in",
-                data: user,
-            });
-        } catch (error) {
-          next(error);
-        }
-    },
     handlerRegisterUser: async (req, res) => {
         try {
             const { username, password, email, fullName } = req.body;
@@ -76,6 +51,7 @@ module.exports = {
                 email,
                 fullName,
             });
+            console.log(user);
             res.status(201).json({
                 status: 'success',
                 data: user,
