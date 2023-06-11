@@ -4,7 +4,7 @@ const authenticationToken = require('../../middlewares/authenticationToken');
 const router = express.Router();
 
 //API Get User/s Data
-router.get('/', handlerGetUsers);
+router.get('/', authenticationToken, handlerGetUsers);
 router.get('/:id', authenticationToken, handlerGetUserById);
 
 // API Register
