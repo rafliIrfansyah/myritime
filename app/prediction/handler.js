@@ -1,15 +1,9 @@
 const axios = require('axios')
 
 module.exports = {
-    handlerGetFishPrice: async (req,res) => {
-        const daerah = req.body.daerah
-        const ikan = req.body.ikan
+    handlerGetAllFishPrice: async (req,res) => {
         try {
-            const result = await axios.post('https://prediksi-harga-ikan-guktqld2iq-et.a.run.app/predict', {
-                daerah: daerah,
-                ikan: ikan
-            }
-            );
+            const result = await axios.post('https://prediksi-harga-ikan-guktqld2iq-et.a.run.app/fishprice');
             res.status(200).json({
                 status: 'success',
                 data: result.data.prediction,
@@ -20,5 +14,5 @@ module.exports = {
                 message: error.message,
             });
         }
-    }
+    },
 }

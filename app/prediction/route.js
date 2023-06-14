@@ -1,8 +1,8 @@
 const express = require('express');
-const { handlerGetFishPrice } = require('./handler');
+const { handlerGetFishPrice, handlerGetAllFishPrice, handlerGetFilteredFishPrice } = require('./handler');
 const authenticationToken = require('../../middlewares/authenticationToken');
 const router = express.Router();
 
-router.post('/fish', authenticationToken, handlerGetFishPrice);
+router.post('/fish', authenticationToken, handlerGetAllFishPrice);
 
 module.exports = router;
