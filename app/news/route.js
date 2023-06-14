@@ -3,6 +3,6 @@ const { handlerGetAllNews } = require('./handler');
 const authenticationToken = require('../../middlewares/authenticationToken');
 const router = express.Router();
 
-router.post('/', authenticationToken, handlerGetAllNews);
+router.get('/', authenticationToken, handlerGetAllNews);
 
 module.exports = router;

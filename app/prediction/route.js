@@ -3,6 +3,6 @@ const { handlerGetFishPrice, handlerGetAllFishPrice, handlerGetFilteredFishPrice
 const authenticationToken = require('../../middlewares/authenticationToken');
 const router = express.Router();
 
-router.post('/fish', authenticationToken, handlerGetAllFishPrice);
+router.get('/fish', authenticationToken, handlerGetAllFishPrice);
 
 module.exports = router;
